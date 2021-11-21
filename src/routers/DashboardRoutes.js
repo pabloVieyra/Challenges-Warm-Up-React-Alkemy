@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-/* import { HeroScreen } from "../components/HeroScreen"; */
+import { PostsScreen } from "../components/home-comp/PostsScreen";
 import { HomeScreen } from "../components/home-comp/HomeScreen";
 
 export const DashboardRoutes = () => {
@@ -8,7 +8,7 @@ export const DashboardRoutes = () => {
     <>
       <Switch>
         <Route exact path="/" component={HomeScreen} />
-        {/* <Route exact path="/hero/:heroId" component={HeroScreen} /> */}
+         <Route exact path="/posts/:postsId" component={PostsScreen} /> 
         <Redirect to="/" />
       </Switch>
     </>

@@ -1,15 +1,18 @@
 import React from "react";
-//import { Button } from "./Button";
+import { Button } from "../login-comp/Button";
 //import { CardsContainer } from "./CardsContainer";
 
 export const HomeScreen = () => {
   return (
     <div className="home-screen animate__animated animate__fadeIn animate__slow">
+      <div className="container mt-1">
+      <Button ></Button>
+      </div>
       <div className="jumbotron jumbotron-fluid mt-5">
         <div className="container">
           <h1 className="display-3">
             <b>Warm up - Challenge</b>
-          </h1>
+            </h1>
           <p className="lead">
             <b>Hello- bienvenido a la aplicacion de posts</b>
           </p>
@@ -22,7 +25,7 @@ export const HomeScreen = () => {
           {/* <CardsContainer /> */}
         </div>
       </div>
-      {/* <Button /> */}
+       
     </div>
   );
 };
