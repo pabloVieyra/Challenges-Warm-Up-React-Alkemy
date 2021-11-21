@@ -1,9 +1,8 @@
 import { types } from "../types/types";
 
-const initialState = JSON.parse(localStorage.getItem("heroes")) || {
-  heroes: [],
-  good: [],
-  bad: [],
+const initialState = JSON.parse(localStorage.getItem("posts")) || {
+  posts: [],
+  
 };
 
 let newHeroesArray;
