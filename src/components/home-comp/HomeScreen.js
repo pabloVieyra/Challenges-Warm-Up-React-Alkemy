@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "../login-comp/Button";
-//import { CardsContainer } from "./CardsContainer";
+import { PostsContainer } from "./PostsContainer";
 
 export const HomeScreen = () => {
   return (
@@ -22,7 +22,7 @@ export const HomeScreen = () => {
           <h1 className="display-5">
             <b>Posts</b>
           </h1>
-          {/* <CardsContainer /> */}
+           <PostsContainer /> 
         </div>
       </div>
        

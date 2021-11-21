@@ -27,11 +27,13 @@ export const PostsScreen = () =>{
     
                   <h5>Info: </h5>
                   <ul>
-                    <li>UserId: {data.user}</li>
-                    <li>Id: {data.Id}</li>
+                    <li>UserId: {data.userId}</li>
+                    <li>Id: {data.id}</li>
                   </ul>
-                  <h3>Title:{data.title} </h3>
-                  <h4>Body: {data.body} </h4>
+                  <h3>Title:</h3>
+                  <h4>{data.title}</h4>
+                  <h3>Body:  </h3>
+                  <h6>{data.body}</h6>
                   
                 </div>
                 <NavLink
