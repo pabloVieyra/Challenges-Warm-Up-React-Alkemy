@@ -6,8 +6,10 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { types } from "../../types/types"; 
 
+
 export const LoginScreen = () => {
-  const [{ email, password }, handleInputChange, reset] = useForm();
+  
+  const [{ email, password }, handleInputChange, reset] = useForm ();
 
   const dispatch = useDispatch();
 
@@ -30,30 +32,31 @@ export const LoginScreen = () => {
       .catch(() => {
         Swal.fire({
           title: "Error!",
-          text: "Invalid email or password",
+          text: "Mail o Contraseña erroneas",
           icon: "error",
-          confirmButtonText: "Cool",
+          confirmButtonText: "Ok",
         });
       });
   };
 
   return (
-    <div className="login animate__animated animate__fadeIn animate__slow">
-      <h2>Sign In</h2>
+    <div className="m-0 vh-100 row justify-content-center align-items-center">
+    <div className="col-auto p-5 text-center" >
+      <h2>Iniciar sesión</h2>
       <Form className="form" onSubmit={handleSubmit}>
         <FormGroup>
-          <Label for="exampleEmail">Username</Label>
+          <Label for="exampleEmail">Nombre de Usuario</Label>
           <Input
             type="email"
             name="email"
             id="exampleEmail"
-            placeholder="example@example.com"
+            placeholder="Alkemy@Gmail.com"
             onChange={handleInputChange}
             value={email}
           />
         </FormGroup>
         <FormGroup>
-          <Label for="examplePassword">Password</Label>
+          <Label for="examplePassword">Contraseña</Label>
           <Input
             type="password"
             name="password"
@@ -63,10 +66,12 @@ export const LoginScreen = () => {
             value={password}
           />
         </FormGroup>
+       
         <button className="btn btn-success">
-          Log in <i className="fas fa-sign-in-alt"></i>
+          Ingresar
         </button>
       </Form>
+    </div>
     </div>
   );
 };
