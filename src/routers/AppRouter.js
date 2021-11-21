@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import { LoginScreen } from "../components/LoginScreen";
+import { LoginScreen } from "../components/login-comp/LoginScreen"; 
 import { DashboardRoutes } from "./DashboardRoutes";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";

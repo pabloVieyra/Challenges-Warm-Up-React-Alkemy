@@ -5,12 +5,12 @@ const initialState = JSON.parse(localStorage.getItem("posts")) || {
   
 };
 
-let newHeroesArray;
+let newPostsArray;
 
 export const postsReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.add:
-      newHeroesArray = [...state.heroes, action.payload];
+      newPostsArray = [...state.posts, action.payload];
       state = {
         posts: newPostsArray,
     
@@ -19,7 +19,7 @@ export const postsReducer = (state = initialState, action) => {
       localStorage.setItem("posts", JSON.stringify(state));
       return state;
     case types.delete:
-      newHeroesArray = state.posts.filter(
+      newPostsArray = state.posts.filter(
         (posts) => posts.id !== action.payload
       );
       state = {
