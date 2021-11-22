@@ -16,9 +16,9 @@ export const Input = () => {
       try {
         const url = `https://jsonplaceholder.typicode.com/posts/${values}`;
         const response = axios.get(url)
-        console.log((await response).data);
+        
         const results  = (await response).data;
-        console.log(results)
+       
         const action = {
           type: types.search,
           payload: results,
