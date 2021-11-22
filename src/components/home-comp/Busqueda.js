@@ -4,7 +4,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 import { MiniPosts } from "./MiniPosts";
 import { Input } from "./Input";
-import { Cargando } from "./Cargando";
 import { types } from "../../types/types";
 
 export const Busqueda = (props) => {
@@ -37,16 +36,9 @@ export const Busqueda = (props) => {
         <ModalBody>
           <Input />
           <div className="overflow-auto">
-            {state ? (
-              state.map(
-                (post) =>
-                  !posts.some((elem) => elem.id === post.id) && (
-                    <MiniPosts key={post.id} post={post} />
-                  )
-              )
-            ) : (
-               <Cargando  /> 
-            )}
+            
+                    <MiniPosts key={state.id} post={state} />
+                
           </div>
         </ModalBody>
         <ModalFooter>

@@ -21,14 +21,17 @@ export const Posts = ({ post }) => {
     dispatch(action);
   };
 
+ 
   return (
-    <div className="col animate__animated animate__fadeIn animate__slow">
+   <div>
      
+    <div className="col animate__animated animate__fadeIn animate__slow">
+       
         <div className="card-body">
           <h5 className="card-title">Title:{post.title}</h5>
           <ul className="ps-0 list">
-                    <li>UserId: {post.user}</li>
-                    <li>Id: {post.Id}</li>
+                    <li>UserId: {post.userId}</li>
+                    <li>Id: {post.id}</li>
           </ul>
           <NavLink
             className="btn btn-info btn-more-info"
@@ -68,7 +71,9 @@ export const Posts = ({ post }) => {
             Delete 
           </Tooltip>
         </div>
+        
       </div>
- 
+      
+    </div>
   );
 };

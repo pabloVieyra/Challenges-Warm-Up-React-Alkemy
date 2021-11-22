@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, FormGroup, Input, Label } from "reactstrap";
+import { Form, FormGroup, Input, Label,Card } from "reactstrap";
 import { useForm } from "../../hooks/useForm"; 
 import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
@@ -41,7 +41,9 @@ export const LoginScreen = () => {
 
   return (
     <div className="m-0 vh-100 row justify-content-center align-items-center">
+     
     <div className="col-auto p-5 text-center" >
+    
       <h2>Iniciar sesión</h2>
       <Form className="form" onSubmit={handleSubmit}>
         <FormGroup>
@@ -71,7 +73,9 @@ export const LoginScreen = () => {
           Ingresar
         </button>
       </Form>
+      
     </div>
+    
     </div>
   );
 };

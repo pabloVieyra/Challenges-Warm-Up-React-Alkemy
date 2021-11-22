@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { useFormSearch } from "../../hooks/useFormSearch";
 import { types } from "../../types/types";
+import axios from 'axios'
 
 export const Input = () => {
   const [values, handleInputChange] = useFormSearch();
@@ -14,8 +15,10 @@ export const Input = () => {
     if (values !== "") {
       try {
         const url = `https://jsonplaceholder.typicode.com/posts/${values}`;
-        const response = await fetch(url);
-        const { results } = await response.json();
+        const response = axios.get(url)
+        console.log((await response).data);
+        const results  = (await response).data;
+        console.log(results)
         const action = {
           type: types.search,
           payload: results,
@@ -46,7 +49,7 @@ export const Input = () => {
           type="text"
           className="form-control"
           placeholder="Id del posts"
-          aria-label="Recipient's username"
+         
           aria-describedby="basic-addon2"
           value={values}
           onChange={handleInputChange}
