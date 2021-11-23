@@ -1,9 +1,15 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { useParams } from "react-router";
 
 import { NavLink } from "react-router-dom";
 import { Tooltip } from "reactstrap";
 import { useFetch } from "../../hooks/useFetch";
+import { types } from "../../types/types";
+
+
+
 
 export const PostsScreen = () => {
   const [tooltipInfoOpen, setTooltipInfoOpen] = useState(false);
@@ -22,11 +28,13 @@ export const PostsScreen = () => {
     console.log("entro")
     const action = {
       type: types.edit,
-      payload: post,
+      payload: data,
     };
     dispatch(action);
     
   };
+
+  const dispatch = useDispatch();
 
 
   return (
