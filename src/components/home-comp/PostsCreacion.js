@@ -5,21 +5,36 @@ import { NavLink} from "react-router-dom";
 
 import {Form,FormGroup,Label,Col,Input,Button} from "reactstrap";
 
-const Titulo="";
-const UserId="";
-const Body="";
+
 
 
 const url = `https://jsonplaceholder.typicode.com/posts`;
 
-const handle = (e) => {
- 
-};
 
 
 
 
 export const PostsCreacion = () => {
+
+
+  const handle = (e) => {
+    e.preventDefault();
+    const Titulo = e.target.TituloA
+    const Body= e.target.BodyA
+    const UserId= e.target.UserIdA
+     axios.post(url,{
+      Titulo, 
+      Body,
+      UserId
+      })
+      e.target.TituloA = "";
+      e.target.BodyA = "";
+      e.target.UserIdA= "";
+    
+  };
+
+
+
   return (
     <div className="home-screen animate__animated animate__fadeIn animate__slow">
       <div className="jumbotron jumbotron-fluid mt-5">
@@ -35,55 +50,55 @@ export const PostsCreacion = () => {
             <Form>
                   <FormGroup row>
                     <Label
-                      for="Titulo"
+                      for="TituloA"
                       sm={2}
                     >
                       Titulo
                     </Label>
                     <Col sm={10}>
                       <Input
-                        id="Titulo"
-                        name="Titulo"
-                        placeholder="Titulo"
-                        type="Titulo"
+                        id="TituloA"
+                        name="TituloA"
+                        placeholder="TituloA"
+                        type="TituloA"
                         onChange={handle}
-                        value={Titulo}
+                        
                       />
                     </Col>
                   </FormGroup>
                   <FormGroup row>
                     <Label
-                      for="UserId"
+                      for="UserIdA"
                       sm={2}
                     >
                       UserId
                     </Label>
                     <Col sm={10}>
                       <Input
-                        id="UserId"
-                        name="UserId"
-                        placeholder="UserId"
-                        type="UserId"
+                        id="UserIdA"
+                        name="UserIdA"
+                        placeholder="UserIdA"
+                        type="UserIdA"
                         onChange={handle}
-                        value={UserId}
+                        
                       />
                     </Col>
                   </FormGroup>
                   
                   <FormGroup row>
                     <Label
-                      for="Body"
+                      for="BodyA"
                       sm={2}
                     >
                       Body
                     </Label>
                     <Col sm={10}>
                       <Input
-                        id="exampleText"
-                        name="text"
-                        type="textarea"
+                        id="BodyA"
+                        name="BodyA"
+                        type="textareaA"
                         onChange={handle}
-                        value={Body}
+                       
                       />
                       
                     </Col>
