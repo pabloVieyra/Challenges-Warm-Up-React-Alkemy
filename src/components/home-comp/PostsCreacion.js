@@ -7,7 +7,6 @@ import {Form,FormGroup,Label,Col,Input,Button} from "reactstrap";
 
 
 
-
 const url = `https://jsonplaceholder.typicode.com/posts`;
 
 
@@ -26,7 +25,7 @@ export const PostsCreacion = () => {
       Titulo, 
       Body,
       UserId
-      })
+      }) 
       e.target.TituloA = "";
       e.target.BodyA = "";
       e.target.UserIdA= "";
@@ -113,7 +112,7 @@ export const PostsCreacion = () => {
                         size: 10
                       }}
                     >
-                      <Button>
+                      <Button >
                         Submit
                       </Button>
                     </Col>
