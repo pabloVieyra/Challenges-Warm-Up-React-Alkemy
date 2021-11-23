@@ -35,7 +35,7 @@ export const HomeScreen = () => {
       >
         <NavItem>
           <NavLink href="/Creacion">
-            Creacion de Posts
+            Creacion de Blogs
           </NavLink>
         </NavItem>
         <NavItem>
@@ -61,13 +61,13 @@ export const HomeScreen = () => {
             <b>Warm up - Challenge</b>
             </h1>
           <p className="lead">
-            <b>Hello- bienvenido a la aplicacion de posts</b>
+            <b> Bienvenido a la aplicacion de Blogs!</b>
           </p>
         </div>
         <hr className="my-4" />
         <div className="container mt-1">
           <h1 className="display-5">
-            <b>Posts</b>
+            <b>Blogs</b>
           </h1>
            <PostsContainer /> 
         </div>

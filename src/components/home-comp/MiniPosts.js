@@ -15,7 +15,7 @@ export const MiniPosts = ({ post }) => {
   
   const handleSelect = (e) => {
     e.preventDefault();
-    if (posts.length < 20) {
+    if (posts.length < 100) {
       
         
           const action = {
@@ -29,7 +29,7 @@ export const MiniPosts = ({ post }) => {
     } else {
       Swal.fire({
         title: "Team Completo!",
-        text: "No se puede agregar mas de 20 posts",
+        text: "No se puede agregar mas de 20 blogs",
         icon: "warning",
         confirmButtonText: "Cool",
       });

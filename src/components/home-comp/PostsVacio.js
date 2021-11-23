@@ -7,7 +7,7 @@ export const PostsVacio = () => {
     <div className="col">
       
         <div className="btn-container">
-          <h5>Añadir a Posts</h5>
+          <h5>Añadir a Blogs</h5>
           <Busqueda />
         </div>
       
