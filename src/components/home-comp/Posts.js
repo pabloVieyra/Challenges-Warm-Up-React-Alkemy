@@ -1,25 +1,49 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import { Tooltip } from "reactstrap";
 import { types } from "../../types/types";
+
+
 
 export const Posts = ({ post }) => {
   const [tooltipInfoOpen, setTooltipInfoOpen] = useState(false);
   const toggleInfo = () => setTooltipInfoOpen(!tooltipInfoOpen);
+
   const [tooltipDeleteOpen, setTooltipDeleteOpen] = useState(false);
   const toggleDelete = () => setTooltipDeleteOpen(!tooltipDeleteOpen);
+
+  const [tooltipDeleteOpenF, setTooltipDeleteOpenF] = useState(false);
+  const toggleDeleteF = () => setTooltipDeleteOpenF(!tooltipDeleteOpenF);
 
   const dispatch = useDispatch();
 
   const handleDelete = (e) => {
     e.preventDefault();
+    console.log("entro")
     const action = {
       type: types.delete,
       payload: post.id,
     };
     dispatch(action);
+    
   };
+
+  const handleDeleteF = (e) => {
+    e.preventDefault();
+    console.log("entro")
+    axios.delete(`https://jsonplaceholder.typicode.com/posts/${post.id}`)
+    const action = {
+      type: types.delete,
+      payload: post.id,
+    };
+    dispatch(action);
+    Redirect("/");
+  };
+
+
 
  
   return (
@@ -50,10 +74,10 @@ export const Posts = ({ post }) => {
           >
             More info!
           </Tooltip>
-          <div></div>
+          
           <button
             type="button"
-            className="btn btn-danger btn-delete"
+            className="btn btn-ligth btn-delete"
             style={{
               textDecoration: "underline",
             }}
@@ -68,7 +92,28 @@ export const Posts = ({ post }) => {
             target="TooltipDelete"
             toggle={toggleDelete}
           >
-            Delete 
+            Delete De la lista
+          </Tooltip>
+          <div></div>
+          {/* delete de todos */}
+          <button
+            type="button"
+            className="btn btn-danger btn-delete"
+            style={{
+              textDecoration: "underline",
+            }}
+            id="TooltipDeleteF"
+            onClick={handleDeleteF}
+          >
+            <i className="fas fa-trash-alt"></i>
+          </button>
+          <Tooltip
+            placement="bottom"
+            isOpen={tooltipDeleteOpenF}
+            target="TooltipDeleteF"
+            toggle={toggleDeleteF}
+          >
+            Delete De la Api
           </Tooltip>
         </div>
         

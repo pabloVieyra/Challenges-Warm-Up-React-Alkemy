@@ -18,6 +18,8 @@ export const postsReducer = (state = initialState, action) => {
 
       localStorage.setItem("posts", JSON.stringify(state));
       return state;
+
+
     case types.delete:
       newPostsArray = state.posts.filter(
         (posts) => posts.id !== action.payload
@@ -28,6 +30,20 @@ export const postsReducer = (state = initialState, action) => {
       };
       localStorage.setItem("posts", JSON.stringify(state));
       return state;
+      
+
+      case types.edit:
+       if(state.posts.id == action.payload.id){
+        state.posts=action.payload;
+       }
+      state = {
+        posts: state
+      
+      };
+      localStorage.setItem("posts", JSON.stringify(state));
+      return state;
+
+
 
     default:
       return state;
