@@ -1,7 +1,21 @@
 import React from "react";
+import axios from "axios";
+
 import { NavLink} from "react-router-dom";
 
 import {Form,FormGroup,Label,Col,Input,Button} from "reactstrap";
+
+const Titulo="";
+const UserId="";
+const Body="";
+
+
+const url = `https://jsonplaceholder.typicode.com/posts`;
+
+const handle = (e) => {
+ 
+};
+
 
 
 
@@ -32,6 +46,8 @@ export const PostsCreacion = () => {
                         name="Titulo"
                         placeholder="Titulo"
                         type="Titulo"
+                        onChange={handle}
+                        value={Titulo}
                       />
                     </Col>
                   </FormGroup>
@@ -48,6 +64,8 @@ export const PostsCreacion = () => {
                         name="UserId"
                         placeholder="UserId"
                         type="UserId"
+                        onChange={handle}
+                        value={UserId}
                       />
                     </Col>
                   </FormGroup>
@@ -64,7 +82,10 @@ export const PostsCreacion = () => {
                         id="exampleText"
                         name="text"
                         type="textarea"
+                        onChange={handle}
+                        value={Body}
                       />
+                      
                     </Col>
                   </FormGroup>
                   <FormGroup
